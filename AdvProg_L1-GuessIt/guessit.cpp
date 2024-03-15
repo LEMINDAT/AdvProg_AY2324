@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-//#include "guessit.h"
+#include "guessit.h"
 
 using namespace std;
 
@@ -76,7 +76,7 @@ bool checkSuccess(string answer) {
 bool checkContinuePlaying(char isContinued) {
     // TODO: return result after checking player continue playing or not
     bool result = false;
-    result=(isContinued=='y');
+    result=(isContinued=='y' || isContinued=='Y');
     return result;
 }
 
@@ -108,7 +108,7 @@ void playGuessIt() {
     } while (!checkSuccess(answer));
 }
 
-int main() {
+int run() {
     srand(time(0));
     char isContinued;
     do {
