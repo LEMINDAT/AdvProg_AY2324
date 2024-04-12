@@ -157,8 +157,8 @@ bool isWholeWord(const string& mask)
 {
      bool answer = true;
     //Write your code here
-    for(auto c: mask){
-        if(c=='_') answer=false;
+    for(const auto& c: mask){
+        if(c=='_' || c=='-') return false;
     }
     return answer;
 }
@@ -181,7 +181,7 @@ bool wordConformToMask(const string& word, const string& mask, char ch)
     if(word.size() != mask.size()) return 0;
     //Write your code here
     for(int i =0; i<word.size(); i++){
-        if(mask[i]=='_'){
+        if(mask[i]=='_' || mask[i]=='-'){
             if(ch != word[i]) answer = 0;
         }
         else if(word[i] != mask[i]){
