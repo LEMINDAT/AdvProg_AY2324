@@ -181,11 +181,8 @@ bool wordConformToMask(const string& word, const string& mask, char ch)
     if(word.size() != mask.size()) return 0;
     //Write your code here
     for(int i =0; i<word.size(); i++){
-        if(mask[i]=='_' || mask[i]=='-'){
-            if(ch != word[i]) answer = 0;
-        }
-        else if(word[i] != mask[i]){
-            return false;
+        if(mask[i]!='-' && word[i] != mask[i]){
+            answer = false;
         }
     }
     return answer;
