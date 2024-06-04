@@ -121,7 +121,7 @@ void updateSecretWord(string& secretWord, const char ch, const string& word)
 ***/
 void updateEnteredChars(const char ch, string& chars){
     // TODO: append the character ch is in end of the text chars
-    chars+=tolower(ch)+' ';
+    chars+=tolower(ch);
 }
 
 /***
@@ -161,7 +161,7 @@ void processData(const char ch, const string& word,
     ***/
     bool is_in=0;
     for(char c: word){
-        if(c==ch) is_in=1;
+        if(tolower(c)==tolower(ch)) is_in=1;
     }
     if(is_in){
         updateSecretWord(secretWord, ch, word);
